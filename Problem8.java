@@ -1,5 +1,4 @@
 
-
 public class Problem8 {
 
     /**
@@ -34,7 +33,7 @@ public class Problem8 {
         for (int n = 0 ; n < number.length() ; n++) {
             int product = 1;
             for (int k = n ; k < n + 5 && k < number.length() ; k++ ){
-                product = product * Integer.valueOf(String.valueOf(number.charAt(k)));
+                product *= Integer.valueOf(String.valueOf(number.charAt(k)));
             }
             if (product > result) {
                 result = product;
