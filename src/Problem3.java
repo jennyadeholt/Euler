@@ -43,12 +43,12 @@ public class Problem3 {
             }
 
 
-
+            System.out.println("Prime" + p);
         }
 
         for (long n : numbers){
             if (n > 0) {
-                System.out.println(n);
+                System.out.println("Prime" + n);
             }
         }
     }
