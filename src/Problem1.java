@@ -1,5 +1,3 @@
-import java.util.List;
-
 /**
  * Created with IntelliJ IDEA.
  * User: jennynilsson
@@ -21,6 +19,5 @@ public class Problem1 {
         }
 
         System.out.print("We got sum " + sum);
-
     }
 }
