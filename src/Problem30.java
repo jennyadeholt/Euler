@@ -17,6 +17,8 @@ public class Problem30 {
             numbers++;
         }
 
+
+
         int digits = 1;
         while ((numbers / digits) % 10 != 0) {
             digits *= 10;
