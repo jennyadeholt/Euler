@@ -9,41 +9,20 @@ public class Problem7 {
 
     public static void main(String[] args){
 
-        int nbrOfPrimes = 10001;
-        int nbr = 17;
-        int isPrime[] = new int[nbrOfPrimes];
+        int nbrOfPrimes = 0;
+        int nbr = 0;
+        int size = 1000000;
+        boolean isPrime[] = PrimeHelper.getPrimes(size);
 
+        for (int i = 1; i < size ; i++) {
+            nbrOfPrimes = isPrime[i] ? nbrOfPrimes + 1 : nbrOfPrimes;
 
-        isPrime[0] = 2;
-        isPrime[1] = 3;
-        isPrime[2] = 5;
-        isPrime[3] = 7;
-        isPrime[4] = 11;
-        isPrime[5] = 13;
-
-        int primesFound = 6;
-        boolean prime = true;
-
-        boolean run = true;
-        while(run) {
-
-            prime = true;
-            for (int n = 1 ; n < primesFound - 1 ; n++) {
-                if (nbr % isPrime[n] == 0) {
-                    prime = false;
-                    break;
-                }
-            }
-
-            if (prime) {
-                System.out.println("Nbr " + nbr + " is a prime");
-                isPrime[primesFound++] = nbr;
-            }
-
-            nbr+=2;
-            if (primesFound == nbrOfPrimes) {
-                run = false;
+            if (nbrOfPrimes == 10001) {
+                nbr = i;
+                break;
             }
         }
+
+        System.out.println(isPrime[nbr] + " " + nbr );
     }
 }
