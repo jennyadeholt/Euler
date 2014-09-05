@@ -20,6 +20,7 @@ public class Problem4 {
 
 
         for (int i = m1 ; i > 10000 ; i--){
+            System.out.println("Sum ");
             for (int j = m2 ; j > 10000; j--){
                 if (j <= i){
                     sum = i * j;

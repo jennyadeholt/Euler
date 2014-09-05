@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 /**
  * Created with IntelliJ IDEA.
  * User: jennynilsson
@@ -7,49 +9,20 @@
  */
 public class Problem10 {
 
+    private static boolean isPrime[];
+    private static int size = 2000000;
+
     public static void main(String[] args){
 
-        long time = System.currentTimeMillis();
-        System.out.println(time);
+        isPrime = PrimeHelper.getPrimes(size);
+        long result = 0;
 
-
-        int nbrOfPrimes = 2000000;
-        int nbr = 17;
-        int isPrime[] = new int[nbrOfPrimes];
-
-
-        isPrime[0] = 2;
-        isPrime[1] = 3;
-        isPrime[2] = 5;
-        isPrime[3] = 7;
-        isPrime[4] = 11;
-        isPrime[5] = 13;
-
-        int primesFound = 6;
-        long result = 2 + 3 + 5 + 7 + 11 + 13;
-
-        while(true) {
-            boolean prime = true;
-            for (int n = 1 ; n < primesFound ; n++) {
-                if (nbr % isPrime[n] == 0) {
-                    prime = false;
-                    break;
-                }
-            }
-
-            if (prime) {
-                isPrime[primesFound++] = nbr;
-                result += nbr;
-            }
-
-            nbr+=2;
-
-            if (nbr >= 2000000) {
-                break;
+        for (int i = 1 ; i < size ; i++ ){
+            if (isPrime[i]){
+                result += i;
             }
         }
 
-        time = System.currentTimeMillis() - time;
-        System.out.println("Total amount is " + result + " and it took " + time);
+        System.out.println("Total amount is " + result);
     }
 }

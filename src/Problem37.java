@@ -9,7 +9,7 @@ public class Problem37 {
 
     public static void main(String[] args){
 
-        getPrimes();
+        isPrime = PrimeHelper.getPrimes(1000000);
 
         int count = 0;
         int value = 0;
@@ -26,24 +26,6 @@ public class Problem37 {
         }
 
         System.out.println("We found " + count + " counts of truncatable with a value of " + value);
-    }
-
-    private static void getPrimes() {
-
-        int n = 1000000;
-        isPrime = new boolean[n+1];
-        Arrays.fill(isPrime, true);
-
-        isPrime[1] = false;
-        for (int i = 4; i <= n; i += 2){
-            isPrime[i] = false;
-        }
-
-        for (int i = 3; i <= n; i += 2) {
-            for (int j = i+i; j < n; j += i) {
-                isPrime[j] = false;
-            }
-        }
     }
 
     private static boolean isTruncatable(String digits){

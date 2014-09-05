@@ -8,18 +8,8 @@ public class Problem35 {
     public static void main(String[] args){
 
         int n = 1000000;
-        boolean isPrime[] = new boolean[n+1];
-        Arrays.fill(isPrime, true);
+        boolean isPrime[] = PrimeHelper.getPrimes(n+1);
 
-        for (int i = 4; i <= n; i += 2){
-            isPrime[i] = false;
-        }
-
-        for (int i = 3; i <= n; i += 2) {
-            for (int j = i+i; j < n; j += i) {
-                isPrime[j] = false;
-            }
-        }
 
         int count = 0;
 
