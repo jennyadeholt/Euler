@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 /**
  * Created with IntelliJ IDEA.
  * User: jennynilsson
@@ -14,7 +12,7 @@ public class Problem10 {
 
     public static void main(String[] args){
 
-        isPrime = PrimeHelper.getPrimes(size);
+        isPrime = PrimeHelper.generatePrimes(size);
         long result = 0;
 
         for (int i = 1 ; i < size ; i++ ){

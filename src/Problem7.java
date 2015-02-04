@@ -9,10 +9,12 @@ public class Problem7 {
 
     public static void main(String[] args){
 
+        long time = System.currentTimeMillis();
+
         int nbrOfPrimes = 0;
         int nbr = 0;
         int size = 1000000;
-        boolean isPrime[] = PrimeHelper.getPrimes(size);
+        boolean isPrime[] = PrimeHelper.generatePrimes(size);
 
         for (int i = 1; i < size ; i++) {
             nbrOfPrimes = isPrime[i] ? nbrOfPrimes + 1 : nbrOfPrimes;
@@ -23,6 +25,6 @@ public class Problem7 {
             }
         }
 
-        System.out.println(isPrime[nbr] + " " + nbr );
+        System.out.println(nbr + " : " + (System.currentTimeMillis() - time) + " millis");
     }
 }

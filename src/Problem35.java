@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 /**
  * Created by jennynilsson on 2014-02-04.
  */
@@ -8,7 +6,7 @@ public class Problem35 {
     public static void main(String[] args){
 
         int n = 1000000;
-        boolean isPrime[] = PrimeHelper.getPrimes(n);
+        boolean isPrime[] = PrimeHelper.generatePrimes(n);
 
         int count = 0;
 

@@ -1,4 +1,3 @@
-import java.util.Arrays;
 
 /**
  * Created by jennynilsson on 2014-02-05.
@@ -10,7 +9,9 @@ public class Problem50 {
 
     public static void main(String[] args){
 
-        isPrime = PrimeHelper.getPrimes(size);
+        long time = System.currentTimeMillis();
+        isPrime = PrimeHelper.generatePrimes(size);
+        System.out.println((System.currentTimeMillis() - time) + " millis");
 
         int max = 0;
         int sum = 0;
@@ -32,6 +33,6 @@ public class Problem50 {
                 }
             }
         }
-        System.out.println("Prime " + sum );
+        System.out.println("Prime " + sum + " : " + (System.currentTimeMillis() - time) + " millis");
     }
 }
