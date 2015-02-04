@@ -2,7 +2,15 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by jennynilsson on 15-02-04.
+ * If the numbers 1 to 5 are written out in words: one, two, three, four, five,
+ * then there are 3 + 3 + 5 + 4 + 4 = 19 letters used in total.
+ *
+ * If all the numbers from 1 to 1000 (one thousand) inclusive were written out in words,
+ * how many letters would be used?
+ *
+ * NOTE: Do not count spaces or hyphens. For example, 342 (three hundred and forty-two) contains
+ * 23 letters and 115 (one hundred and fifteen) contains 20 letters. The use of "and" when writing
+ * out numbers is in compliance with British usage.
  */
 public class Problem17 {
 
@@ -10,6 +18,7 @@ public class Problem17 {
     static StringBuffer buffer = new StringBuffer();
 
     public static void main(String[] args) {
+        long time = System.currentTimeMillis();
 
         letters.put(1, "one");
         letters.put(2, "two");
@@ -41,11 +50,12 @@ public class Problem17 {
         letters.put(100, "hundred");
         letters.put(1000, "thousand");
 
-        int stop = 345;
+        int start = 1;
+        int stop = 1000;
 
-        for (int i = stop; i <= stop; i++) {
+        for (int i = start; i <= stop; i++) {
             if (i < 10) {
-                oneDigits(i);
+                append(i);
             } else if (i < 100) {
                 twoDigits(i);
             } else if (i < 1000) {
@@ -57,27 +67,24 @@ public class Problem17 {
         }
         System.out.println(buffer.toString());
         System.out.println(buffer.length());
-    }
-
-    private static void oneDigits(int ones) {
-        append(letters.get(ones));
+        System.out.println(System.currentTimeMillis() - time + " millis");
     }
 
     private static void twoDigits(int teens) {
         if (teens < 20) {
-            append(letters.get(teens));
+            append(teens);
         } else {
             int ones = teens % 10;
-            append(letters.get(teens - ones));
+            append(teens - ones);
             if (ones != 0) {
-                oneDigits(ones);
+                append(ones);
             }
         }
     }
 
     private static void threeDigits(int hundreds) {
-        append(letters.get(hundreds / 100));
-        append(letters.get(100));
+        append(hundreds / 100);
+        append(100);
 
         int teens = hundreds % 100;
         if (teens != 0) {
@@ -87,8 +94,8 @@ public class Problem17 {
     }
 
     private static void getThousand(int thousands) {
-        append(letters.get(thousands / 1000));
-        append(letters.get(1000));
+        append(thousands / 1000);
+        append(1000);
 
         int hundred = thousands % 1000;
         if (hundred != 0) {
@@ -96,12 +103,15 @@ public class Problem17 {
         }
     }
 
+    private static void append(int number) {
+        append(letters.get(number));
+    }
+
     private static void append(String text) {
         buffer.append(text);
     }
 
     private static void newLine() {
-        //buffer.append("\n");
-        //22124
+        buffer.append("\n");
     }
 }
