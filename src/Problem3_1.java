@@ -1,9 +1,7 @@
 /**
- * Created with IntelliJ IDEA.
- * User: jennynilsson
- * Date: 2013-12-02
- * Time: 15:00
- * To change this template use File | Settings | File Templates.
+ * The prime factors of 13195 are 5, 7, 13 and 29.
+ * <p/>
+ * What is the largest prime factor of the number 600851475143 ?
  */
 public class Problem3_1 {
 
@@ -21,8 +19,6 @@ public class Problem3_1 {
                 out = Math.max(i, out);
             }
         }
-
         System.out.println(out);
     }
-
 }
