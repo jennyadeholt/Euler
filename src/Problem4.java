@@ -16,7 +16,7 @@ public class Problem4 {
         int sum = 0;
         System.out.println("Starting at:  " + m1 * m2);
 
-        List<Integer> palindroms = new ArrayList<Integer>();
+        List<Integer> palindroms = new ArrayList<>();
 
 
         for (int i = m1 ; i > 10000 ; i--){
