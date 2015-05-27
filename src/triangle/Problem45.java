@@ -18,20 +18,15 @@ public class Problem45 {
 
         long triangle;
         long pentagonal;
-        long hexagonal;
-        
+
         while (true) {
             n += 2;
-
             triangle = getTriangle(n);
             if (triangle != -1) {
-                pentagonal = isPentagonal(triangle, n);
+                pentagonal = getPentagonal(triangle, n);
                 if (pentagonal != -1) {
-                    hexagonal = isHexagonal(triangle, pentagonal);
-                    if (hexagonal != -1) {
-                        System.out.println("Match for " + n + " " + pentagonal + " " + hexagonal + " = " + triangle);
-                        break;
-                    }
+                    System.out.println("Match for " + n + " " + pentagonal + " " + getHexagonal(triangle, pentagonal) + " = " + triangle);
+                    break;
                 }
             }
         }
@@ -41,7 +36,7 @@ public class Problem45 {
         return (n * (n + 1)) / 2;
     }
 
-    private static long isPentagonal(long sum, long triangle) {
+    private static long getPentagonal(long sum, long triangle) {
         for (long p = triangle; p > 0; p--) {
             if ((p * (3 * p - 1)) / 2 == sum) {
                 return p;
@@ -50,7 +45,7 @@ public class Problem45 {
         return -1;
     }
 
-    private static long isHexagonal(long sum, long pentagonal) {
+    private static long getHexagonal(long sum, long pentagonal) {
         for (long p = pentagonal; p > 0; p--) {
             if (p * (2 * p - 1) == sum) {
                 return p;
