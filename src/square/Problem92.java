@@ -46,7 +46,7 @@ public class Problem92 {
             int sum = 0;
             while (number > 0) {
                 sum += Math.pow(number % 10, 2);
-                number = number / 10;
+                number /= 10;
             }
 
             return getArrival(sum);
