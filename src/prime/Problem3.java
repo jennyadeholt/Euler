@@ -16,7 +16,7 @@ public class Problem3 {
 
         System.out.println(sqrt);
 
-        ArrayList<Long> numbers = new ArrayList<Long>();
+        ArrayList<Long> numbers = new ArrayList<>();
 
         for (long i = 2; i <= sqrt; i++) {
             numbers.add(i);

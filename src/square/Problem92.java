@@ -23,14 +23,13 @@ public class Problem92 {
     public static void main(String[] args) {
 
         long time = System.currentTimeMillis();
+        int count = 0;
+
         table[1] = 1;
         table[89] = 89;
 
-        int count = 0;
-        int currentSum;
-
         for (int number = 1; number < numbers; number++) {
-            currentSum = getArrival(number);
+            int currentSum = getArrival(number);
             if (currentSum == 89) {
                 count++;
             }
@@ -48,7 +47,6 @@ public class Problem92 {
                 sum += Math.pow(number % 10, 2);
                 number /= 10;
             }
-
             return getArrival(sum);
         }
     }
